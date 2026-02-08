@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    color:white;
+}
+p{
+    display:flex;
+    justify-content: center;
+}
+/* My main logic*/
+.parent{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: flex-end;
+    align-items: center;
+    margin:0 auto;
+    gap:15px;
+    height:150px;
+}
+.child{
+    display:flex;
+    border:5px white solid;
+}
+
+/* SHOULD I GIVE UP GIVE UP GIVE UP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! I HAVE BEEN LEARNIG DURING THREE DAYS STRAIGHT HOW TO WORK WITH GRID BUT I CAN'T I CAN'T. I AM SO FUCKING FOOL, PATHETICK IDIOT, DUMB, ASSHOLE THAT CAN EVEN UNDERSTAND THIS SHIT. I AM SO TIRED, I AM ANGRY, I WANNA CRY SO BADLY. I DUNNO WHAT TO DO. I NEED GIVE UP I WANNA GIVE UP. GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP GIVE UP*/

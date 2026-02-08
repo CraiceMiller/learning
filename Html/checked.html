@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: grey;
+            display:grid;
+            /*flex-direction: column;*/
+            justify-content: center;
+            align-content: center;
+            justify-items: center;
+            /**grid-template-columns: repeat(3, 1fr)*;*/
+            font-family:Monserrat,sans-serif;
+            color:white;
+            text-align: justify;
+            margin:150px auto;
+            /*gap:20px;*/
+        }
+        h1{
+            font-size:50px;
+            margin:0px;
+            /**border-bottom:solid 1px white;*/
+        }
+        div{
+            display:flex;
+            flex-direction: column;
+            border: solid 2px white;
+            align-items: center;
+            padding: 45px 30px 20px ;
+            gap:15px;
+        }
+        button{
+            size: 100px;
+        }
+        button:hover{
+            background-color: purple;
+        }
+        #list{
+            margin:0px;
+            border: none;
+            flex-direction: column;
+            padding:0px;
+        }
+        h1::after{
+            border-bottom: solid 20px white;
+        }
+        ol{
+            margin:0px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div>
+
+    <h1 id="h1"></h1>
+    <p id="text"></p>
+    <p id="text2"></p>
+    <p id="text3"></p>
+    <p id="text4"></p>
+
+
+    <br>
+    <p>Do You like the japanese animation?: </p>
+    <input type="checkbox" id="like-anime">
+
+    <p>What is your favorite anime</p>
+
+        <div id="list">
+            <ol>
+                <li><input type="radio" name="anime" id="Nazo">  <label> Nazo no Kanojo</label></li>
+                <li><input type="radio" name="anime" id="Boku">  <label> Boku no heroe Academia</label></li>
+                <li><input type="radio" name="anime" id="Dr">  <label> Dr. Stone</label></li>
+                <li><input type="radio" name="anime" id="Nichijou">  <label> Nichijou</label></li>
+            </ol>
+        
+        </div>
+        <button class="submit" id="submit">Sumbit</button>
+        <input style="text" id="my-input" placeholder="type a letter" width="100px">
+
+    </div>
+
+   
+
+    <script >
+        const title = document.querySelector("h1");
+        const div = document.querySelector("div");
+        const input = document.querySelector("#my-input");
+        const text = document.querySelector("#text");
+        const text2 = document.querySelector("#text2");
+        const text3 = document.querySelector("#text3");
+        const text4 = document.querySelector("#text4");
+        const submit = document.querySelector("#submit");
+        const like_anime =document.querySelector("#like-anime");
+        const nazo =document.querySelector("#Nazo");
+        const boku =document.querySelector("#Boku");
+        const dr =document.querySelector("#Dr");
+        const Nichijou =document.querySelector("#Nichijou");
+
+
+
+
+
+        title.textContent= "Check boxes";
+        text.textContent = "";
+        submit.addEventListener( "click", ()=>{
+            like_anime.checked ? text.textContent = "You like the anime too!!":text.textContent = "You dont like the anime, Why :|";
+
+            if (nazo.checked){text2.textContent = "You like Nazo no Kanojo"}
+            else if (boku.checked){text2.textContent = "You like Boku no hereo academia "}
+            else if (dr.checked){text2.textContent = "You like Doctor Stone"}
+            else if ( Nichijou.checked){text2.textContent = "You like Nichijou"}
+            else {text2.textContent = "You don't like any Anime"}
+
+             })
+
+        /** 
+         * MOUSE EVENTS
+         * click: The user clicks an element. (You already know this one!)
+
+            dblclick: The user double-clicks an element.
+
+            mousedown / mouseup: The user presses / releases a mouse button.
+
+            mouseover / mouseout: The user moves the mouse cursor over / away from an element.
+
+
+
+            KEYBOARDS  EVENTS
+            keydown: A key is pressed down.
+
+            keyup: A key is released.
+
+            keypress: A key is pressed and released.
+
+
+
+            DOCUMENTS EVETNS
+            load: The entire page and all its resources (images, scripts) have finished loading.
+
+            resize: The browser window is resized.
+
+            scroll: The user scrolls the page.
+        */
+             
+        div.addEventListener("mouseover",
+        ()=>{
+            text3.textContent = "You are moving the mouse :)" 
+
+        })
+
+        input.addEventListener("keydown",(event)=>{
+            text4.textContent = `You are typing the letter: ${event.key}`;
+        })
+        
+            
+    </script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: grey;
+            display:grid;
+            /*flex-direction: column;*/
+            justify-content: center;
+            align-content: center;
+            justify-items: center;
+            /**grid-template-columns: repeat(3, 1fr)*;*/
+            font-family:Monserrat,sans-serif;
+            color:white;
+            text-align: justify;
+            margin:150px auto;
+            /*gap:20px;*/
+        }
+        h1{
+            font-size:50px;
+            margin:0px;
+            /**border-bottom:solid 1px white;*/
+        }
+        div{
+            display:flex;
+            flex-direction: column;
+            border: solid 2px white;
+            align-items: center;
+            padding: 45px 30px 20px ;
+            gap:15px;
+        }
+        button{
+            size: 100px;
+        }
+        button:hover{
+            background-color: purple;
+        }
+        #buttons{
+            border: none;
+            flex-direction: row;
+        }
+        h1::after{
+            border-bottom: solid 20px white;
+        }
+    </style>
+</head>
+<body>
+   
+    <div>
+
+    <h1 id="h1"></h1>
+    <p id="text"></p>
+
+    <div id="buttons">
+    <button class="submit" id="add">Add</button>
+    <button class="submit" id="reset">Reset</button>
+    <button class="submit" id="minus">Subtract</button>
+    </div>
+
+    </div>
+
+   
+
+    <script >
+        const title = document.querySelector("h1");
+        const text = document.querySelector("#text");
+        const add = document.querySelector("#add");
+        const reset = document.querySelector("#reset");
+        const minus = document.querySelector("#minus");
+        let num=0;
+
+
+        title.textContent= "Counter";
+        text.textContent = num;
+        //text.ariaSetSize = "1000px";
+
+        add.onclick = ()=>{
+            num++;
+            text.textContent = num;
+        }
+        reset.onclick = ()=>{
+            num=0;
+            text.textContent = num;
+        }
+        minus.onclick = ()=>{
+            num--;
+            text.textContent = num;
+        }
+
+        
+
+
+
+
+    </script>
+
+    
+
+</body>
+</html>

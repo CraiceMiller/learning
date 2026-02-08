@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator </title>
+    <style>
+        body{
+            display: grid;
+            background-color: aliceblue;
+            justify-content: center;
+            align-items: center;
+            margin: 60px auto;
+            font-family: Monserrat,sans-serif;
+        }
+
+        main{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(7, 1fr);
+            align-items: stretch;
+            background-color: black;
+            border:solid 25px lightgrey;
+            padding: 30px;
+            gap:10px;
+        }
+        button{
+            border-radius: 999px;
+            background-color: #A5A5A5;
+            color: white;
+        }
+        .symbol{
+            background-color: #FF9F0A;
+        }
+        button:hover{
+            background-color: purple;
+        }
+
+        #display-numbers{
+            display:flex;
+            grid-column: span 4 ;
+            background-color: white;
+            height: 30px;
+        }
+        #result{
+            display:flex;
+            grid-column: span 4 ;
+            background-color: white;
+            margin:0px 0px 15px;
+            height: 30px;
+            justify-content: center;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header><h1>Simple Calculator</h1></header>
+    <p id="text"></p>
+
+    <main>
+        <div id="display-numbers"></div>
+        <div id="result"></div>
+
+
+
+        <button id="AC" value="AC" class="symbol">AC</button>
+        <button class="button"></button>
+        <button value="%">%</button>
+        <button value="/" class="symbol">/</button>
+
+        <button id="7" value="7">7</button>
+        <button id="8" value="8">8</button>
+        <button id="9" value="9">9</button>
+        <button id="*" value="*" class="symbol">*</button>
+
+        <button id="4" value="4">4</button>
+        <button id="5"  value="5">5</button>
+        <button id="6" value="6">6</button>
+        <button id="-" value="- " class="symbol">-</button>
+
+        <button id="1" value="1">1</button>
+        <button id="2" value="2">2</button>
+        <button id="3" value="3">3</button>
+        <button id="+" value="+ " class="symbol">+</button>
+
+        <button id="0" value="0">0</button>
+        <button id="." value=".">.</button>
+        <button id="C" value="C" class="symbol">c</button>
+        <button id="=" value="=" class="symbol">=</button>
+
+
+
+
+    </main>
+
+    <script>
+        let display =document.getElementById("display-numbers");
+        let result =document.getElementById("result");
+        let allButtons= document.querySelectorAll("button");
+        let numberForDisplay="";
+
+        console.log(`All buttons ${allButtons}`);
+
+        function display_numbers(number) {
+            numberForDisplay +=number.value;
+            display.textContent = numberForDisplay;
+            console.log(numberForDisplay);
+        }
+
+        function save(){
+            try {
+                result.textContent = `${eval(numberForDisplay).toLocaleString()}`; 
+                
+            } catch (error) {
+                result.textContent = "Syntax Error"
+                
+            }
+           
+        }
+
+
+        //THE MAIN LOGIC
+        function deleteAll(){
+            numberForDisplay = "";
+            display.textContent = numberForDisplay;
+            result.textContent = numberForDisplay;
+        }
+
+
+        function deleteLast(){
+            current=numberForDisplay;
+            numberForDisplay=current.slice(0,-1);
+            display.textContent = numberForDisplay;
+        }
+        
+        function forButton(button){
+            const value = button.value;
+            console.log(`Current Value: ${value}`)
+            if (value==="="){
+                button.addEventListener("click",save);
+            }else if (value ==="C"){
+                button.addEventListener("click",deleteLast);
+            }else if (value==="AC"){
+                button.addEventListener("click",deleteAll);
+            }else { 
+                button.addEventListener("click",
+                ()=>{display_numbers(button)} 
+                )}
+
+        }
+
+        /**
+        allButtons.forEach(button =>{
+            const value = button.value;
+            console.log(`Current Value: ${value}`)
+            if (value==="="){
+                button.addEventListener("click",save);
+            }else if (value ==="C"){
+                button.addEventListener("click",deleteLast);
+            }else if (value==="AC"){
+                button.addEventListener("click",deleteAll);
+            }else { 
+                button.addEventListener("click",
+                ()=>{display_numbers(button)} 
+                )}
+
+        })
+        */
+
+       allButtons.forEach(forButton)
+
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>

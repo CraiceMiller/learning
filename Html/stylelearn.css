@@ -1,0 +1,112 @@
+body{
+    background-color: black;
+    font-family:'Monserrat', sans-serif;
+    color:white;
+    margin:0px 0px 0px;
+   
+}
+main{
+    display:grid;
+    justify-content: center;
+    margin:0px auto;
+    max-width: 70vw;
+}
+div{
+    display:flex;
+    align-items: center;
+    margin:10px;
+    flex-direction: column;
+    text-align: justify;
+    /*border: solid 5px white;*/
+}
+header{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    padding:8px 40px;
+}
+h1{
+    font-size: 80px;
+    font-style: oblique;
+    font-weight: bold;
+    border-bottom:5px solid purple;
+    margin:0 0 10px;
+    text-shadow:0px 0px 10px purple;
+}
+p{
+    margin:0 auto;
+    font-size:25px;
+
+}
+#uniqueduck{
+    height:100px;
+    width:100px;
+
+}
+.info{
+    font-size:15px;
+}
+section{
+    margin:30px 10px;
+    border:solid 2px black;
+}
+.content{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin:10px 10px;
+}
+.duck-images{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    margin:10px 10px;
+}
+i{
+    color:purple;
+
+}
+img{
+    margin:10px;
+    min-block-size: 150px;
+    padding:5px;
+    
+}
+button{
+    background-color:purple;
+
+}
+footer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:25px 0px 0px;
+
+}
+.foot{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/*Pseudo classes */
+img:hover{
+    background-color: aqua;
+
+
+}
+i:hover{
+    color:blue;
+}
+button:hover{
+    background-color:blue;
+}
+a:visited i{
+    color:goldenrod;
+    i:hover{
+        color:blue;
+    }
+
+}
+

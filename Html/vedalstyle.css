@@ -1,0 +1,105 @@
+body{ 
+    background-color:rgb(217, 243, 249);
+    font-style: italic;
+    border: 2px solid;
+    padding:15px;
+    
+
+
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: wavy underline;
+    color:white;
+    font-size: 50px;
+    background:linear-gradient(to right,skyblue,white);
+    background-repeat: no-repeat;
+}
+h2{
+    border-top-style: dotted;
+    border-bottom-style: dotted;
+    border-top-color: burlywood;
+    margin-left:50%;
+
+}
+h3{
+    text-decoration: overline;
+}
+
+p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:darkblue;
+    font-style:initial;
+    font-weight:unset;
+    font-size:  20px;
+
+}
+
+#video{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:orangered;
+    font-style:oblique;
+    font-weight: lighter;
+    font-size: larger;
+
+}
+#neuro{
+    border-style:groove;
+    border-style:10px;
+    border-color:aqua;
+    border-radius: 10px;
+    padding:50px;
+
+}
+#vedalimage{
+    border-style:solid;
+    border-width: 20px;
+    padding:15px;
+    margin-right:50%;
+}
+
+.learn{
+    font-size:larger;
+    font-weight: bolder;
+    color: rebeccapurple;
+    margin-right:50%;
+    
+}
+#neuroimage{
+    border-radius: 999px;
+    border-color:black;
+    margin-left:50%;
+}
+#box1{
+    border: 5px solid;
+    width: 250 px;
+    height: 300px;
+    background:linear-gradient(to top,blue, whitesmoke);
+    margin: 0px; 
+
+}
+
+#box2{
+    border: 5px solid;
+    margin-left: 50%;
+
+    background:linear-gradient(to top,green,whitesmoke);
+}
+#box3{
+    border: 5px solid;
+    margin-right: 50%;
+
+    background:linear-gradient(to top,red,whitesmoke);
+}
+#mainbox{
+    border:5px dotted;
+
+}
+#big{
+    font-size:70px;
+}
+#like{
+    background-color:red;
+
+}

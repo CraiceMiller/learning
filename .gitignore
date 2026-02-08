@@ -29,6 +29,14 @@ MySQL/uploads/
 TypeScript/.vscode/*.json
 # very specific file
 initgit.bash
+*.bash
 
 *.log
 /**/.vscode/
+# Ignore these file types in any folder
+*.mp4
+*.zip
+*.exe
+*.jpg
+*.mp3
+*.png

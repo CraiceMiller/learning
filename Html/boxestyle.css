@@ -1,0 +1,85 @@
+body{
+    background-color:black;
+}
+p{
+    color:white;
+    font-size: 50px;
+}
+/*Justify-items is just for grid objects
+align-items is for both grid and flex objects
+
+
+
+*/
+.parent{
+    /* This only create a grid object */
+    display:grid;
+    /* This is only tell us the amount of columns and their width. 
+    though we can set the auto-fill to fill all the window
+    */
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+
+
+    /*  This only create new rows if are set row was reach*/
+    grid-auto-rows: 100px;
+    grid-auto-columns: 100px;
+ 
+    /*  The space between columns and rows*/
+    gap:10px ;
+
+    /*  This only sete the space between margins
+    the first one  is top to bottom and the secnd one is 
+    left to right. if there is only one it will set for the fourt
+    margns(top,bottom,right,left)*/
+    margin:0 auto ;
+
+    /* This only align the child wheter left,center or right*/ 
+    justify-items:flex-end;                                           
+    /*  This only align the child whether top,center or buttom
+    IN THE SAME ROW!!!*/
+    align-items:flex-end;
+
+    /* This is just the color nothing more:3*/
+    background-color:lightgrey;
+
+   
+
+    height: 900px;
+   
+
+    
+
+}
+
+.child{
+    background-color:#acc1ac;
+    /* The same. But more specific*/
+    display:flex; 
+    border-style: solid;
+    overflow:auto;
+    justify-items: cemter;
+    justify-content: center;
+    align-items: self-end;
+    align-content: center;
+
+}
+hello{
+    background-color:pink;
+    display:flex;
+    align-content: flex-end;
+    align-content: center;
+    text-align: center;
+}
+.box-4{
+    grid-column:span 3;
+    border-radius:15px;
+}
+.box-5{
+    display:flex;
+    border:groove 20px lightblue;
+}
+.box-6{
+    display:flex;
+    border:solid 10px lightyellow;
+}

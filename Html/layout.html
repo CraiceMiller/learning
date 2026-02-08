@@ -1,0 +1,181 @@
+<!--12/09/2025-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        body{
+            display:grid;
+            grid-template-columns: 300px  1fr;
+            grid-template-rows: auto 1fr auto;
+            background-color: #E6DFD7;
+            /*border:solid 5px white; */
+
+            margin:0px 10px auto;
+            height: 80vh;
+            color:white;
+            max-width: 100vw;
+            gap:10px 20px;
+            font-family: Monserrat,sans-serif;
+            font-size:20px;
+        }
+        header{
+            display:flex;
+            flex-direction: column;
+            grid-column: span 2;
+            justify-content: center;
+            position:sticky;
+            top:0;
+            background-color: #bfbfbf;
+            
+
+        }
+        #left{
+            display:flex;
+            grid-column: 1;
+            grid-row:2;
+            flex-direction: column;
+            background-color: #F9F9F7;
+            /*overflow-y: scroll;*/
+            align-items: center;
+            padding:10px;
+
+        }
+        main{
+            display:flex;
+            grid-column: 2;
+            grid-row:2;
+           /* border:solid 5px green; */
+        }
+        footer{
+            display:flex;
+            grid-row: 3;
+            grid-column: span 2;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #577d92;
+        }
+        div{
+            display:flex;
+            
+           /* border:solid 10px purple;*/
+           /* min-height: 25px; */
+            margin:5px 0px;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+           
+        }
+        a:hover{
+            background-color: #001834;
+        }
+        @media (min-width:600px){
+            body{
+                font-size:50;
+            }
+        }
+        @font-face {
+            font-family: face;
+            src: url('i dunno');
+        }
+        @import url("learn.css");
+
+        h1::after{
+            content:" ->";
+        }
+        .box1{
+            justify-content: flex-end;
+        }
+        #title{
+            display: flex;
+            flex-direction:column;
+        }
+        i{
+            color:white;
+        }
+        h1{
+            margin:0;
+            border-bottom:solid 5px white;
+        }
+        p{
+            color:black;
+            text-align: justify;
+        }
+        h2{
+            color:darkblue;
+        }
+        li{
+            color:black;
+        }
+
+        
+    </style>
+    <script src="https://kit.fontawesome.com/8c5d56fd4d.js" crossorigin="anonymous"></script>
+   
+    
+    
+
+</head>
+<body>
+    
+    
+    
+    <header >
+        <div class="box1"><a><div><p>Sign in  </p> <i class="fa-solid fa-right-to-bracket"></i></div></a></div>
+        <div id="title"><h1>HowToday's Anime Culture</h1><p>discoverd every news every day every where</p><br></div>
+        <div class="box1"></div>
+
+       
+
+    </header>
+
+    <section id="left">
+
+        
+            <h2>what anime is?</h2>
+            <p>Anime is a Japanese style of animation known for its colorful graphics, expressive characters, and a wide variety of genres that appeal to diverse audiences. Though the term literally means "animation" in Japan, it is used internationally to refer specifically to animated works originating from that country. </p>
+
+            <br>
+            
+            <h2>Key characteristics and themes</h2>
+            <p>
+                <ol>
+                <li>Distinct art style: Visually, anime is distinguished by a variety of art styles, but common features include characters with large, emotive eyes, detailed settings, and dynamic "camera effects" like panning and zooming.</li>
+                <li>Broad range of genres: Unlike some Western animation that is primarily for children, anime is a medium for all ages and encompasses nearly every genre, including sci-fi, fantasy, horror, drama, and romance.</li>
+                <li>Adaptations of manga: Many of the most popular anime series are adapted from manga, which are Japanese comics and graphic novels.</li>
+                <li>Complex storytelling: Anime often features serialized, complex narratives with deep character development that can span multiple seasons.</li>
+                <li>Intended audience: Anime is often categorized by its target demographic, with major groups including shōnen (young boys), shōjo (young girls), seinen (young men), and josei (young women).</li>
+                </ol>
+
+            </p>
+            
+       
+
+    </section>
+
+    <main>
+        
+    </main>
+
+
+    <footer>
+        <div>
+
+        </div >
+        <p id="message"> </p>
+        
+
+        <div>
+
+
+        </div>
+
+    </footer>
+
+    <script src="layout.js"></script>
+    
+    
+</body>
+</html>
