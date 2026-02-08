@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            justify-content: center;
+            margin: 50px auto;
+            background-color: black;
+            color:white;
+        }
+
+
+
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+            padding:10px;
+            border:2px white solid;
+            height:450px;
+        }
+        button:hover{
+            background-color: purple;
+        }
+        img{
+            height:200px;
+        }
+
+        img:hover{
+            background-color: red;
+        }
+        #imgdiv{
+            border:none;
+            height: 200px;
+            width: 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>MY POKEMON API PRACTICE</h1>
+
+    <div> 
+        <p  id="text">search a pokemon by number or name :3</p>
+        <div id="imgdiv"><img id ="pokeImg" alt="sprite" src=""  > </div>
+    <input type="text" id="pokeName" placeholder="enter pokemon name">
+    <button id="button">Fetch Pokemon </button>
+    
+
+    </div>
+
+    <script type ="module">
+        import {print} from "./myjs/tools.js";
+        
+        //API -------------------------------------------------------------------------------------------->
+        async function fetchData(url){
+            try{
+
+            const response = await fetch(url);
+            if (!response.ok){
+                throw new ReferenceError("Could no fetch the resource...")}
+
+            const data = await response.json(); 
+            return data;
+
+            }catch(e){
+                console.log(e);
+                return undefined;
+            }
+        }
+
+
+        
+
+        //API -------------------------------------------------------------------------------------------->
+
+        //testing
+
+        //let resp = fetchData(url);
+        const button = document.querySelector("#button"); 
+        const input = document.querySelector("#pokeName");
+        const img = document.querySelector("#pokeImg");
+        const body = document.querySelector("body");
+        let text = document.querySelector("#text");
+
+        //updating the text
+        async function updateText(pokemon,exist=true){
+            if (!exist){
+                text.textContent= `The pokemon ${input.value} does not exit, or maybe you type a invalid input ? `
+            }
+
+            if (isNaN(input.value)){
+                text.textContent= `So you chose the pokemon ${pokemon.name}, I like it :3 `
+                return;
+            }
+
+
+            text.textContent = `The pokemon No.${pokemon.id} is ${pokemon.name} `
+            
+        }
+
+        //creating the function to get the apin 
+        async function getPokemon (event){
+            //ensuring that the key pressed is enter or the even is a click...
+            if (event.key !== "Enter" && event.type !=="click"){return ;}
+
+            //getting the value of the input 
+            const value = input.value; 
+            if (value ===""){return; }
+
+            //the variable url to search the api 
+            let url = "https://pokeapi.co/api/v2/pokemon/";
+            url +=value.toLowerCase() ;
+
+            //waiting the result from fetch
+            let pokemon = await fetchData(url); 
+
+
+            if (pokemon !== undefined){ 
+                //updating the image
+                img.src = pokemon.sprites.front_default;
+                img.style.display = "block";
+                //img.height = "100px";
+
+                //cleaning the input 
+                updateText(pokemon)
+                input.value = "";
+                print(pokemon)
+                
+                return ;
+            }
+
+            
+
+            updateText(pokemon,false);
+        }
+
+
+        input.value = "100";
+        button.addEventListener("click", getPokemon);
+        body.addEventListener("keydown",getPokemon);
+
+
+    </script>
+
+    
+    
+</body>
+</html>

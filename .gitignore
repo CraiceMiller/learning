@@ -40,3 +40,7 @@ initgit.bash
 *.jpg
 *.mp3
 *.png
+*/node_modules/
+*.docx
+*.xlsx
+*/.vscode/

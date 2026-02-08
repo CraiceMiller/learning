@@ -1,0 +1,9 @@
+This is someting i need to follow, am i right?
+
+The mythical phrase "Hello, World!" is the legendary, two-word, 12-character rite of passage for millions of programmers across the globe. It is far more than a simple string of text; it is a universal symbol of creation, verification, and the beginning of a developer's journey.
+The genesis of a programming tradition
+The history of "Hello, World!" dates back to the early days of programming and is most famously attributed to Canadian computer scientist Brian Kernighan.
+A "B" tutorial (1972): The phrase's first documented appearance was in Kernighan's 1972 Bell Laboratories internal memo, A Tutorial Introduction to the Language B. In it, he needed a simple but more robust example than the previous one, which just printed "hi!". The longer phrase "hello, world!" was a perfect fit. The inspiration is said to have come from a cartoon that Kernighan had seen, featuring a chick hatching from an egg and saying, "Hello, world!".
+The C book (1978): The phrase was cemented into programming lore with the publication of Kernighan and Dennis Ritchie's influential book, The C Programming Language. This textbook became a standard for computer science education, and the simple example of printing "hello, world" introduced a new generation of programmers to the concept.
+
+

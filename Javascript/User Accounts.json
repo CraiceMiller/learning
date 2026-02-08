@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1234,
+        "user": "mysafetyplace.54@gmail.com",
+        "password": "you//don'Tn33d1T",
+        "balance": 795.27,
+        "wallet": 115.0,
+        "username": "Craice Miler",
+        "debt": 0
+    },
+    {
+        "id": 1235,
+        "user": "hersyis.thebest.334@gmail.com",
+        "password": "inDeEd1m_205/",
+        "balance": 350,
+        "wallet": 80.25,
+        "username": "Hersy Halston",
+        "debt": 10.5
+    },
+    {
+        "id": 1236,
+        "user": "ashley.cassidy@gmail.com",
+        "password": "myPaswOrd312",
+        "balance": 122.25,
+        "wallet": 10.5,
+        "username": "Ashley :3",
+        "debt": 53.65
+    },
+    {
+        "id": 1237,
+        "user": "plushistoreaccout.1984@gmail.com",
+        "password": "P@/nSs*tore_.24@",
+        "balance": 1585352.48,
+        "wallet": 700.0,
+        "username": "Stuffed, Stuff and Soft. LTTA",
+        "debt": 2000
+    }
+]

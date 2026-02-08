@@ -1,0 +1,49 @@
+let task,age,names;
+
+
+class TaskHandler{
+	#name;
+	#rate;
+
+
+	meetCondition(reason, callback,...values){
+		if (reason ){
+			callback(...values);
+	
+		}
+
+	};
+
+
+
+	over(array, callback,...values) {
+		for (let index = 0; index <= array.length ; index ++){
+			const element = array[index];
+			callback(...values);
+			}
+
+	};
+	
+
+};
+
+
+
+
+
+
+task = new TaskHandler();
+age = 18; 
+names = ["hersy", "craice", "Ashley", "Miseru", "stephany", "anthony"]; 
+
+
+
+task.meetCondition(age >= 18, ()=>{
+	console.log("Hello Adult")});
+
+
+//task.meetCondition(age >= 18, task.over(names, (n) => `Hello ${n}` ));
+
+
+
+

@@ -1,0 +1,44 @@
+let myArray = [1,2,3,4,5,6,7,8,9,10];
+
+
+const print = function (value ) { console.log(value) };
+
+myArray.unshift(-3,-2,-1,0);
+console.log(myArray);
+
+myArray.push(11,12,13,15,16);
+console.log(myArray);
+
+myArray.pop();
+
+myArray.shift();
+
+console.log(myArray);
+
+let newArray = myArray.filter(num =>  num >= 5);
+console.log(newArray);
+
+let x = myArray.map(num => num **num );
+console.log(x);
+
+
+console.log(newArray);
+
+let allNumbers = myArray.concat(newArray);
+
+console.log(allNumbers.sort((a,b) => a-b ) );
+
+console.log(allNumbers.at(0));
+console.log(allNumbers[0]);
+console.log(allNumbers.indexOf(1));
+console.log(allNumbers.findLastIndex(n => n -10   ));
+
+print(myArray.with(0,1000));
+print(newArray.sort( (a,b) => a-b))
+print(newArray.reverse());
+
+let num = newArray.at(0);
+
+print(num);
+print(typeof num instanceof Number);
+print(typeof num)

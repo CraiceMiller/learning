@@ -1,0 +1,34 @@
+from flask import Flask, jsonfy
+# from flask_cosc import COSC
+
+NAME = __name__ 
+
+app = Flask(NAME)
+COSC(app)
+
+data = {
+"name":"Craice",
+"age":19, 
+"country":"Altisora"
+
+}
+
+
+@app.route("/api/data")
+def get_Data():
+	return jsonfy(data,{
+			"method":'GET', 
+			"message": "I send this basic 				data from python :3", 
+			"headers":{
+				
+					}
+
+}) 
+
+
+
+
+
+
+
+app.run()

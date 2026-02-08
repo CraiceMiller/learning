@@ -1,0 +1,89 @@
+#VALUES -------------------------------------------------------------
+[string]$name = "hersy " #this only créate a string 
+[int]$age  = 18 #this créate an integer 
+[bool]$isStudent = $true #only a boolean 
+$empty = $null 
+[array] $friends = @("Ashely", "Miseru", "craice")
+$moreInfo = @{
+		country = "Altisora"
+		favColor = "red"
+		heigth = 68.50
+		hasParents = $true
+		}
+#FUNCTIONS ----------------------------------------------------
+function print {
+	param ( $value )
+	Write-Output "$value"
+
+}
+
+print -value $friends
+
+#FOR -----------------------------------------------------------
+for ($i = 0;  $i -le 5; $i++ ){
+	print -value $i 
+
+}
+
+
+#IF-----------------------------------------------------------
+ if ("craice"  -in  $friends ) {
+print -value "indeed craice is it friend"
+}else {
+print -value "no name"
+}
+
+if ($false -or $isStudent ){
+print -value "okay"
+}
+
+
+if ($true -and $isStudent ) {
+print -value "both okay"
+}
+
+ print -value (5 -eq $age)
+
+#typeof ----------------------------------------------------
+print ("hello" -is [string])
+
+
+#while --------------------------------------------
+
+$n = 0
+while ($n -le 5 ) { 
+print -value "NO. $n"
+$n++
+}
+
+
+#My bynary ___________________________________
+
+function myBinary {
+	param ( $Array, $target)
+
+	$start = 0
+	$end =$Array.Count - 1
+
+	while ($start -le $end ) {
+		$mid = ( $start + $end ) / 2 
+
+		if ($Array[$mid] -eq $target ) { return  $mid }
+
+		elseif ($Array[$mid] -le $target ) {$start = $mid + 1 }
+
+		else {$end = $mid -1 }
+
+	}
+	return -1
+
+}
+
+
+$nums = @(1,2,3,4,5,6,7,8,9,10)
+$result = myBinary -Array $nums -target 8
+
+print -value $result 
+
+
+

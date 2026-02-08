@@ -1,0 +1,72 @@
+async function getData(url){
+const response = await fetch(url);
+const data = await response.json();
+return data; 
+};
+
+async function doTask(task,callbackfn=null){
+const result = await task();
+if (callbackfn && result ){
+callbackfn(result);
+} 
+};
+
+
+const task = async ()=>{ 
+return new Promise ( 
+(done,_)=>{ 
+return done("Everything is done"); 
+}
+) 
+};
+
+const PYTHON_DATA_URL = ""; 
+
+let data = {
+name:"Ashley",
+age:17, 
+country:"Altisora"
+
+};
+
+let data2 ="{name:'Hersy',age:18, country:'Altisora' }"
+
+let info = JSON.stringify(data); 
+let info2 = JSON.parse(info);
+let array = ['hello', 'world', 'nice', 'to', 'meet','you']
+
+
+console.log(info);
+console.log(info2);
+console.log(array);
+
+doTask(task,console.log);
+await doTask(task,console.log);
+//----------------------------------------------------------->
+
+async function Send(url,newData){
+const reasons = { 
+method: 'POST', 
+body: JSON.stringify(newData),
+headers: { 
+'Content-Type':'application/json'
+}
+
+}
+
+const response = await fetch(url, reasons);
+const data = await response.json();
+return data; 
+};
+
+
+const reasons = { 
+method: 'POST', 
+body: JSON.stringify(data),
+headers: { 
+'Content-Type':'application/json'
+}
+
+}
+console.log(reasons);
+

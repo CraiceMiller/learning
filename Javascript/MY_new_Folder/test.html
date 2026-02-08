@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aliceblue;
+            display:grid;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            justify-items: center;
+            /**grid-template-columns: repeat(3, 1fr)*;*/
+            font-family:Monserrat,sans-serif;
+            color:grey;
+            text-align: center;
+            margin:150px auto;
+            /*gap:20px;*/
+        }
+        h1{
+            font-size:50px;
+            margin:0px;
+            /**border-bottom:solid 1px white;*/
+        }
+        div{
+            display:flex;
+            flex-direction: column;
+            border: solid 2px gray;
+            align-items: center;
+            padding: 45px 30px 20px ;
+            gap:15px;
+        }
+        button{
+            color: white;
+            background-color: darkblue;
+        }
+        button:hover{
+            background-color: purple;
+        }
+        h1::after{
+            border-bottom: solid 20px white;
+        }
+    </style>
+</head>
+<body>
+   
+    <div>
+
+    <h1 id="h1"></h1>
+
+    <p id="text"></p>
+
+    <input type="text" id="textbox" placeholder="type anything you want">
+    <input type="text" id="textbox2" placeholder="type anything you want">
+    <input type="text" id="textbox3" placeholder="type anything you want">
+
+    <button class="submit" id="submit">Sumbit</button>
+
+    </div>
+
+   
+
+    <script type="module" src="3.js"></script>
+
+    
+
+</body>
+</html>
