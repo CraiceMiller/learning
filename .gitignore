@@ -1,0 +1,34 @@
+# we use .gitignore to exclude certain folder of file 
+# in our github repository 
+
+
+# i guess this is just a pattern. resembly of how LIKE work 
+# in MySQL or re for python or match  for ts
+data/*.json
+!data/test.json
+Python/data/*.json
+# with this i am telling that search throughout my folders
+# insde my typescript and igonre all my .d.ts files
+
+TypeScript/**/*.d.ts
+TypeScript/**/node_modules/
+JavaScript/**/node_modules/
+Python/.env
+Python/**/__pycache__/
+react/node_modules/
+# since in my java folders i worked on maven 
+# structure, i think is how i ignore all 
+# the .class file in all my folder
+Java/**/*.class
+Java/**/.*prefs
+Java/**/target/
+Java/**/build
+# excluding a folder 
+Python/stuff/
+MySQL/uploads/
+TypeScript/.vscode/*.json
+# very specific file
+initgit.bash
+
+*.log
+/**/.vscode/
