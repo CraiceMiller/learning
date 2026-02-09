@@ -1,0 +1,100 @@
+.glass-effect
+{
+    /**31/11/2025 Monday,15:20hrs */
+    background:linear-gradient(135deg, rgb(225,255,255,0.1)) ;
+    backdrop-filter: blur(20px),rgb(225,255,255,0) ;
+    box-shadow: 0 8px 32px 0 rgb(0,0,0,0.37);
+    border: 1px solid rgba(255,255,255,0.18) ; 
+    -webkit-backdrop-filter: blur(20px); 
+}
+/**
+ background:linear-gradient(135deg, rgb(225,255,255,0.1)) ;
+    backdrop-filter: blur(20px),rgb(225,255,255,0) ;
+    box-shadow: 0 8px 32px 0 rgb(0,0,0,0.37);
+    border: 1px solid rgba(255,255,255,0.18) ; 
+    -webkit-backdrop-filter: blur(20px);*/
+
+/**
+colors:  
+2/12/2025
+
+ #181822 , 
+    #60519b , 
+    #31323e , 
+    #c1c3d2 ,
+
+
+    #F1F7F6, 
+    #00DF82, 
+    #2CC395, 
+    #02624C, 
+    #042222, 
+    #021A1A, 
+    #030F0F, 
+    #33666A, 
+
+    #3F6115, 
+    #A0BD63, 
+    #C7CE59, 
+    #F9F8F2, 
+
+    #0A0E15, 
+    #212631, 
+    #373F4E, 
+    #4E576A, 
+    #667085,
+    #333, 
+    #A1A1A1, 
+
+    
+    #6C90C3, 
+    #274272, 
+    #171F55, 
+    #0D1433, 
+
+
+    #79081A, 
+    #0D0103, 
+    #41020D, 
+    #150F19, 
+    #5B2333, 
+    #F7F4F3, 
+
+    #A89BF2, 
+    #050505, 
+    #1F0517, 
+    #590E41, 
+    #11001C, 
+    #220135, 
+    #3A025B, 
+
+    #000000, 
+    #121212, 
+    #101115, 
+    #0A0A0A, 
+    #171717, 
+    
+
+   
+    #F9F395, 
+    #E0AA3E, 
+    #F4F398, 
+    #B88A44, 
+
+
+  
+    #707072, 
+    #CDCED2, 
+    #FCFCFE, 
+    #D0D1D6, 
+    #818286,
+    
+
+*/
+
+.gradient-text 
+{
+    display:inline-block; 
+     -webkit-background-clip: text;
+     background-clip:  text ;
+}

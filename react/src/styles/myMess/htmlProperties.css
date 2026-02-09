@@ -1,0 +1,63 @@
+
+
+body{
+    --main-body-color: #010101; 
+    --orange:#B14203 ; 
+    --blue:#32CAC3 ; 
+    --brown:#A59F89 ; 
+    background-color: var(--main-body-color);
+    color: white; 
+    margin:0; 
+    font-family:  sans-serif;
+    
+}
+
+
+
+
+
+
+
+h1{
+    font-size: 2.2vw ; 
+   /** filter:drop-shadow(0 3px 2px white ); */
+}
+
+h3{
+    border-bottom:2px solid white;
+     padding:0; 
+     margin:0
+}
+
+
+
+
+
+
+input{
+    background-color: transparent;
+    color:white; 
+
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+li:nth-last-child(even){
+    background-color: var(--orange);
+}
+
+li:hover{
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    color:var(--blue); 
+   /** transition: all 5ms;
+    font-size: 25px;*/
+    
+
+}

@@ -49,3 +49,4 @@ initgit.bash
 *.class
 */.vscode/
 */dist/
+!react/**/*.png

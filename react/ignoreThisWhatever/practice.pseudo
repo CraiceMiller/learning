@@ -1,0 +1,129 @@
+define string name 
+name = input "what is your name?: "
+print "Hello " +  name or "user"
+
+//second program. simple form handler
+1.create a form 
+2. create an input type text
+3. create a button type sumbit
+
+//Desictions
+//it must always be true or false
+START  program 
+define number num1, num2
+input num1 = "please enter the firs number: "
+input num2 = "enter num2: "
+
+
+if num1 > num2 do  
+        print "Number 1 is bigger"
+else then 
+        print "Number 1 smaller"
+End if 
+
+END program
+
+
+//create a component that handles multiplies lables and 
+//inputin one single 
+//form in an single button
+START
+create function do 
+    set properties:
+        label 
+        input
+
+end
+
+END
+
+
+//useEffect pseudoCode 
+
+finish to render all the webiste then do 
+
+if deps parameter is not undefined do
+        if deps is empty do 
+                run the useEffect only once
+        end 
+        else do 
+                run the useEffect only one variable 
+                inside the deps change
+        end if
+       
+end 
+else do
+        run this useEffect every time something renders
+end if
+
+end program 
+
+START useEffect_execution 
+
+    // Step 1: Check the Dependency Array (DEPS)
+    // The DEPS array controls WHEN the effect runs.
+
+    IF DEPS IS UNDEFINED THEN // e.g., useEffect(() => { ... })
+        // Reruns on every render.
+        RUN the EFFECT_FUNCTION
+    
+    ELSE IF DEPS IS AN EMPTY ARRAY ([]) THEN // e.g., useEffect(() => { ... }, [])
+        // Reruns only on the first render (Mount).
+        IF this is the FIRST_RENDER (Mount) THEN
+            RUN the EFFECT_FUNCTION
+        END IF
+    
+    ELSE IF DEPS CONTAINS VALUES ([value1, value2]) THEN // e.g., useEffect(() => { ... }, [value])
+        // Reruns only when a value changes.
+        IF this is the FIRST_RENDER (Mount) OR
+           ANY VALUE IN DEPS HAS CHANGED SINCE LAST RENDER THEN
+            
+            // --- CLEANUP CHECK ---
+            IF CLEANUP_FUNCTION EXISTS (The previous effect returned a function) THEN
+                CALL the CLEANUP_FUNCTION from the previous run
+            END IF
+            
+            // --- NEW EFFECT RUN ---
+            RUN the EFFECT_FUNCTION
+        END IF
+    
+    END IF
+
+END useEffect_execution
+
+// The CLEANUP_FUNCTION will also run one final time when the component is removed 
+// from the DOM (Unmount).
+
+
+
+//Digital clcok 
+//31/10/2025
+
+create clock component: 
+    define <p>00:00:00</p>
+    define <p>am,pm</p>
+
+    define useState time,setTime, now, setNow
+
+
+    set useEffect: 
+        define new Date.now 
+
+        if Date.hour > 12 do 
+            set now = pm 
+        else do 
+            set now = am ;
+            
+        while (true) do 
+            setInterval(setTime(Date.now),1000 )
+        end
+
+    end
+
+    put 
+    <p>time</p>
+    <p>now</p>
+
+        
+
+

@@ -1,0 +1,175 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    // "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "esnext",
+    "target": "es5",
+    "lib":[
+      "dom", 
+      "DOM.Iterable",
+      "ESNext"
+        ],
+    //"moduleResolution": "NodeNext",
+    "types": [],
+    //"outDir": "./dist", 
+    //"rootDir": "./src",
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    //"isolatedModules": true,
+    //"noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "allowJs":true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true, 
+    "forceConsistentCasingInFileNames": true, 
+    "noFallthroughCasesInSwitch": true, 
+    //"allowTs": true,
+    //Setting paths 5/11/202 5
+    "baseUrl": "./",
+    "paths": { 
+      /**Rembember 
+      in our paths properties we write  "/*" at the end of the name to make it a folder, it will
+      be a file otherwise */
+
+      /**update 13/11/2025, re-organizating my import based on this video
+        Junior vs Senior React Folder Structure - How to Organize REact Projects.  --Web Dev Simplified
+      */
+      "@assets/*":["src/assets/*"],
+      "@components/*":["src/components/*"], 
+      "@context/*":["src/context/*"],
+      "@data/*":["src/data/*"],
+      "@features/*":["src/features/*"],
+      "@hooks/*":["src/hooks/*"],
+      "@layouts/*":["src/layouts/*"],
+      "@lib/*":["src/lib/*"],
+      "@pages/*":["src/pages/*"],
+      "@services/*":["src/services/*"],
+      "@styles/*":["src/styles/*"],
+      "@utils/*":["src/utils/*"],
+
+      //specifics files
+      "@typing":["src/utils/typing"], 
+      "react-utils.ts":["src/hooks/react-utils.ts"],
+    },
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true, 
+    "noEmit": true,
+    "verbatimModuleSyntax": false,
+    //"resolvePackageJsonImports": true ,
+  
+
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
+
+
+/**
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    // "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "esnext",
+    "target": "es5",
+    "lib":[
+      "dom", 
+      "DOM.Iterable",
+      "ESNext"
+        ],
+    //"moduleResolution": "NodeNext",
+    "types": [],
+    //"outDir": "./dist", 
+    //"rootDir": "./src",
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "esModuleInterop": true,
+    //"isolatedModules": true,
+    //"noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "allowJs":true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true, 
+    "forceConsistentCasingInFileNames": true, 
+    "noFallthroughCasesInSwitch": true, 
+    "moduleResolution": "node",
+    //"allowTs": true,
+    //Setting paths 5/11/202 5
+    "baseUrl": ".",
+    "paths": { 
+      "@/*":[ "./scr/*"], 
+      "@/myjs/*":["./myjs/*"]
+
+    },
+    //"resolvePackageJsonImports": true ,
+
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
+*/

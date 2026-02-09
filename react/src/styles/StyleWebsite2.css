@@ -1,0 +1,118 @@
+/**@import url("./website2style/props.css") ; */
+@import url("./website2style/htmlstyles.css") ; 
+@import url("./website2style/positioning.css") ; 
+@import url("./website2style/sidebarstyle.css") ; 
+@import url("./utils/fonts.css") ; 
+@import url("./utils/effects.css") ; 
+
+
+@tailwind base; 
+@tailwind components; 
+@tailwind utilities; 
+@tailwind screens; 
+@tailwind variants; 
+
+@layer utilities {
+    .square 
+    {
+        @apply h-12 w-12 mt-2 mb-2 ; 
+    }
+    .square-2 
+    {
+        @apply h-24 w-24; 
+    }
+    .square-3
+    {
+        @apply h-48 w-48; 
+    }
+    .square-4
+    {
+        @apply h-96 w-96; 
+    }
+    .square-animation{
+        @apply hover:rounded-xl  hover:bg-green-600  transition-all duration-300 ease-linear ; 
+    }
+    .square-animation-2 {
+        @apply transition-all duration-100 scale-0 origin-left
+    }
+    .fixed-center	
+    {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+
+    }
+    .full-width
+    {
+    	@apply w-screen relative left-[calc(-50vw+50%)] right-[calc(-50vw+50%)];
+
+    }
+    .v-scroll	
+    {
+    @apply overflow-y-auto max-h-full;
+
+    }
+    .focus-ring	
+    {
+    @apply focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-blue-500;
+
+    }
+
+
+    .dark-1 {
+        @apply dark:bg-gray-400 text-white 
+    }
+    .dark-2 {
+        @apply dark:bg-gray-500 text-white 
+    }.dark-3 {
+        @apply dark:bg-gray-600 text-white 
+    }
+    .dark-4 {
+        @apply dark:bg-gray-700 text-white 
+    }
+    .dark-5 {
+        @apply dark:bg-gray-800 text-white 
+    }
+    .dark-6 {
+        @apply dark:bg-gray-900 text-white 
+    }
+
+
+}
+
+@layer components {
+    .sidebar-icon 
+    {
+        @apply /**relative*/ flex items-center justify-center
+         bg-gray-800 text-green-400    
+           /**hover:rounded-3xl*/    
+           square square-animation
+           ; 
+    }
+    .sidebar-tooltip {
+        @apply absolute w-auto p-2 m-2 min-w-max left-14 
+        rounded-md shadow-md
+      text-white bg-gray-900
+        text-xs font-bold 
+        transition-all duration-100 scale-0 origin-left ; 
+    }
+    .darkmode-icon {
+        @apply text-gray-500 
+        mr-3 ml-4 
+        transition-all duration-500 ease-in-out
+        hover:text-purple-600
+        cursor-pointer 
+    }
+    .btn {
+        @apply hover:translate-y-[-5px]  transition-all duration-300
+         text-white dark-2 h-10 w-52 rounded-xl font-bold bg-fifth  ; 
+    }
+    .card {
+        @apply justify-center w-64 h-80 bg-second dark-2 text-justify 
+    }
+
+    
+
+   
+}
+
+
+

@@ -1,0 +1,151 @@
+
+/**25 11 2025 at 20:25hrs Tuesday*/
+.mainContent{
+    grid-template-columns: 10rem 1fr  ;
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "footer footer"
+    ;
+}
+
+header{
+    grid-area: header;
+}
+aside{
+    grid-area:aside; 
+}
+main{
+    grid-area: main; 
+}
+footer{
+    grid-area:footer; 
+}
+
+
+
+@media(max-width:800px) {
+    .mainContent {
+        /* Hide the fixed sidebar from the grid flow on mobile */
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "header header"
+            "main main"
+            "footer footer";
+    }
+
+    .SideBarContainer  {
+        position: fixed;
+        z-index: 1000; /* Ensure it floats above content */
+        height: 100%;
+        /* Start off-screen */
+        transform: translateX(-200px);
+    }
+    .SideBarContainer.show {
+        transform: translateX(-200px);
+    }
+}
+
+
+
+
+/** try two 21:00 */
+.Input-SideBar
+{
+    display:none; 
+    visibility: hidden;
+}
+.toggle
+{
+    height: 50px;
+    width: 70px;
+    z-index:1 ; 
+    cursor:pointer; 
+    border-radius: 2px;
+    position: relative;
+}
+.toggle .common
+{
+    position:absolute ; 
+    height:5px; 
+    width:30px; 
+    background-color: white;
+    border-radius: 50px;
+    transition: 0.3s ease;
+
+}
+.toggle .top-line
+{
+    top:30%;
+    left:50%; 
+    transform: translate(-50%,-50%);
+}
+.toggle .middle-line
+{
+    top:50%;
+    left:50%; 
+    transform: translate(-50%,-50%);
+}.toggle .bottom-line
+{
+    top:70%;
+    left:50%; 
+    transform: translate(-50%,-50%);
+}
+
+.Input-SideBar:checked ~ .toggle .top-line
+{
+    left:10px; 
+    top:20px; 
+    width:45px; 
+    transform: rotate(-45deg);
+}
+.Input-SideBar:checked ~ .toggle .middle-line
+{
+    opacity: 0;
+}
+.Input-SideBar:checked ~ .toggle .bottom-line
+{
+    left:10px; 
+    top:20px; 
+    width:45px; 
+    transform: rotate(45deg);
+}
+
+
+.SideBarContainer {
+    height:100%; 
+    width: 20rem;
+    padding: 2rem 0px; 
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top:5rem; 
+    border-right:10px solid white ; 
+    transform: translateX(-350px);
+    transition:  0.5s ease-in-out; 
+    z-index: 2;
+    box-shadow: 0 10px 15px white ;
+}
+.nav-sidebar ul{
+    display: block;
+    position:relative ; 
+    left:3rem; 
+
+}
+
+ 
+
+.SideBarContainer.show {
+    /* Moves the sidebar into view */
+    transform: translateX(0);
+}
+
+.Input-SideBar:checked ~ .mainContent
+{
+    grid-template-areas: 
+    "header header"
+    "aside main"
+    "aside footer"
+    ;
+}

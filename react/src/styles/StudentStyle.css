@@ -1,0 +1,152 @@
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #0E101C;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+body {
+    margin: 10vh;
+    display: flex;
+    gap: 10px;
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 2vw;
+    /**min-height: 11vw;*/
+    /**border:2px solid green;*/
+
+}
+
+.block {
+    justify-items: flex-start;
+    align-items: flex-start;
+    gap: 1.5px;
+    /** border: none;*/
+
+}
+
+#Search-Bar {
+    gap: 50px;
+}
+#Search-Bar:hover{
+    box-shadow: 1px 1px 35px purple;
+}
+
+#bn {
+    flex-direction: row;
+    gap: 10px;
+}
+
+input::before{
+    background-color: red;
+}
+
+img {
+    height: 25px;
+}
+
+
+input {
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+.row {
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#buttons {
+    min-height: 2vw;
+    justify-content: center;
+}
+
+#info {
+    display: flex;
+    min-width: 20px;
+    min-height: 20px;
+    flex-direction: column;
+    height: 100%;
+    width: 35%;
+    gap: 2vw;
+    border: 2px solid transparent;
+}
+
+#my-form {
+    display: flex;
+    justify-content: space-around;
+    min-width: 20px;
+    min-height: 20px;
+    flex-direction: column;
+    height: 100%;
+    width: 75%;
+    padding: 10px;
+    border: 2px solid transparent;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 20px;
+    min-height: 20px;
+    height: 500px;
+    width: 850px;
+    padding: 10px;
+    gap: 10px;
+    flex-direction: row;
+    border: 2px solid purple;
+}
+
+
+
+h1 {
+    font-size: 3vw;
+    line-height: 1.1;
+    color: #7D42F6;
+    text-decoration: dotted;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    width: 10em;
+    background-color: #2A1B81;
+    color: #ffffff;
+}
+
+button:hover {
+    box-shadow: 1px 1px 15px #646cff;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+@media (max-width: 200px) {
+    :root {
+        background-color: red;
+
+    }
+}

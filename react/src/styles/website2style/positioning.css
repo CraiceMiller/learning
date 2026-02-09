@@ -1,0 +1,74 @@
+/**Position This one*/
+.Box
+{
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    width:10rem; 
+    height:10rem; 
+    font-weight: 800;
+    font-family: "Roboto";
+    background-color: purple;
+    transition:all 1.2s; 
+}
+.Box:hover
+{
+    flex-grow:2;
+}
+
+
+.Container-Grid, .Container-Flex 
+{
+    gap:0 2rem;
+    min-width: 5vw;
+    min-height: 7vw; 
+    border:2px solid white; 
+}
+.Container-Grid
+{
+    display:grid; 
+    grid-auto-flow: column;
+    justify-content: start;
+    background-color: gray;
+    grid-template-columns: repeat(6,minmax(1rem,1fr));
+}
+.Container-Flex
+{
+    display:flex; 
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.Fixed {
+    position: fixed;
+    z-index: 1;
+    top:50%; 
+    left:50%;
+    width:80rem;
+   
+}
+
+.Relative {
+    position: relative;
+    background-color: darkslateblue;
+    grid-column: span 2;
+    width: 100%;
+    flex-grow: 1;
+    bottom:2.4rem; 
+}
+.Absolute {
+    position: absolute;
+    background-color: darkblue;
+    bottom:0; 
+    right:0;
+}
+
+.Sticky {
+    position: sticky;
+    background-color: cadetblue;
+    bottom:0px; 
+}
+.Container-positions{
+    position:relative; 
+}

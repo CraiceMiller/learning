@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  //5/11/205
+  //I dunno what i do this :( 
+  "include": ["src",
+              "ignoreThisWhatever/script.ts",
+              //05/11/2025
+              "src/utils/**/*",
+              "styles/**/*", 
+              "src/components/**/*",
+              "src/hooks/react-utils.ts",
+              //
+              "src/assets/**/*", 
+              "src/components/**/*",
+              "src/context/**/*",
+              "src/data/**/*",
+              "src/features/**/*",
+              "src/hooks/**/*",
+              "src/layouts/**/*",
+              "src/lib/**/*",
+              "src/pages/**/*",
+              "src/services/**/*",
+              "src/styles/**/*",
+              "src/utils/**/*",
+            ], 
+  "exclude": ["node_modules"],
+  "extends":"./tsconfig.json",
+}

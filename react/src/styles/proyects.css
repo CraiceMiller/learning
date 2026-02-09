@@ -1,0 +1,46 @@
+/**
+colors: 
+#010101
+#B14203
+#32CAC3
+*/
+@import url('clockStyle.css') ;
+@import url("./myMess/htmlProperties.css") ; 
+@import url("./myMess/myProperties.css");
+@import url('./pown.css'); 
+
+
+/**
+body:hover{
+    font-size: 100px;
+    transition: all 2s;
+    cursor: pointer; 
+
+}
+
+htlm:hover{
+    font-size: 100px;
+    transition: all 2s;
+    cursor: pointer; 
+
+}
+:hover{
+    font-size: 100px;
+    transition: all 2s;
+    cursor: pointer; 
+
+}
+*/
+  
+@media (width:10px){
+    body{
+        background-color: #0066ff;
+    }
+}
+
+/**
+div{
+    border:10px solid white; 
+
+}
+*/

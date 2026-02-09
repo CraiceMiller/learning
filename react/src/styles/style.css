@@ -1,0 +1,110 @@
+/**
+colors: 
+#242424
+#333
+#010101
+#0E101C
+ rgba(255, 255, 255, 0.87)
+*/
+body {
+  margin: 10vh;
+  display: grid;
+  gap:10px; 
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color:crimson;
+  background-color: #0E101C;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  margin:0; 
+}
+h1 {
+  font-size: 3.2em;
+   line-height: 1.1;
+   color: white; 
+   text-decoration: dotted;
+   text-shadow: 1px 1px 10px crimson;
+}
+
+main{
+  display:flex;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 10px; 
+  gap:5vw ; 
+  flex-direction: column;
+  align-items: center;
+  border:2px solid purple;
+  margin:0; 
+}
+
+nav a:link{
+  color:white
+
+}
+nav a:focus{
+  color:purple
+
+
+}
+nav a:hover{
+  color:lightblue
+
+
+}
+nav a:active{
+  color:purple 
+}
+
+a{
+  color:white
+
+}
+
+button:focus{
+  background-color: purple ;
+}
+.Button:hover{
+  box-shadow: 1px 1px 15px purple;
+
+}
+
+.Button:active {
+  background-color: purple;
+}
+
+.Button{
+  background-color: white;
+  /**text-align: start;*/
+  height: 100px;
+  margin:10px; 
+}
+
+.Navigation-Routes {
+  width:500px; 
+  min-height: 500px;
+}
+
+li:hover{
+
+  font-weight: bolder;
+  font-style: oblique;
+  font-variant: unset;
+  font-stretch: extra-condensed;
+
+}
+
+li:foucs{ 
+  
+  color:white; 
+}
+
+
+
+
+
+
+ 

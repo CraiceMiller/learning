@@ -1,0 +1,72 @@
+#Board-Game
+{
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border:10px solid white ; 
+    padding:10px ;
+    margin:10px ; 
+}
+.square
+{
+    width:200px; 
+    height:200px; 
+}
+.white
+{
+    background-color: whitesmoke;
+}
+.black
+{
+    background-color: #333;
+}
+.row
+{
+    display:flex; 
+    flex-direction: row;
+    /**
+    justify-content: center;
+    align-items: center;
+    height: 100vw;
+    
+    border:2px solid white ; */
+}
+.Chess-Pice
+{
+    height:100%; 
+    cursor: grab;
+}
+
+
+/** swapy 12/11/2025 */
+.Slot-Container  
+{
+    
+    display: flex;
+    flex-direction: column;
+    border:2px dashed white ;  
+    padding:5px ;  
+    height: var(---square);
+    width: var(---square) ; 
+}
+.Swapy-Container 
+{
+    ---square:100px ; 
+    ---miniSquare:50px; 
+    display: flex;
+    flex-direction: row;
+    border:1.2vw solid purple ; 
+    padding: min(5vw ) ; 
+
+}
+.Item-Container
+{
+    background-color: #333;
+    border:2px solid white ; 
+    height: var(---miniSquare);
+    width: var(---miniSquare) ; 
+    cursor: grab;
+    justify-items: center;
+    
+}
