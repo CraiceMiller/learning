@@ -1,0 +1,139 @@
+[
+    {
+        "product": "Giant Teddy Bear",
+        "price": 49.99,
+        "stock": 13,
+        "extra_characteristics": {
+            "material": "Soft Polyester",
+            "color": "Brown",
+            "size": "Large",
+            "washable": true
+        },
+        "id": 2234
+    },
+    {
+        "product": "Sparkle Unicorn Plush",
+        "price": 25.5,
+        "stock": 30,
+        "extra_characteristics": {
+            "material": "Glitter Fabric",
+            "color": "Rainbow",
+            "size": "Medium",
+            "sound_feature": false
+        },
+        "id": 2235
+    },
+    {
+        "product": "Mini Octopus Reversible",
+        "price": 12.0,
+        "stock": 50,
+        "extra_characteristics": {
+            "material": "Velvet",
+            "color": "Pink/Blue",
+            "size": "Small",
+            "mood_expression": true
+        },
+        "id": 2236
+    },
+    {
+        "product": "Dragon Hatchling Plush",
+        "price": 35.75,
+        "stock": 20,
+        "extra_characteristics": {
+            "material": "Felt",
+            "color": "Green",
+            "size": "Medium",
+            "articulated_wings": true
+        },
+        "id": 2237
+    },
+    {
+        "product": "Space Alien Plushie",
+        "price": 18.99,
+        "stock": 40,
+        "extra_characteristics": {
+            "material": "Fuzzy Fleece",
+            "color": "Purple",
+            "size": "Small",
+            "glow_in_dark": true
+        },
+        "id": 2238
+    },
+    {
+        "product": "Wise Owl Plush",
+        "price": 29.0,
+        "stock": 10,
+        "extra_characteristics": {
+            "material": "Knitted Fabric",
+            "color": "Grey",
+            "size": "Medium",
+            "glasses_included": true
+        },
+        "id": 2239
+    },
+    {
+        "product": "Kawaii Sushi Roll Plush",
+        "price": 9.5,
+        "stock": 60,
+        "extra_characteristics": {
+            "material": "Soft Plush",
+            "color": "White/Orange",
+            "size": "Mini",
+            "food_themed": true
+        },
+        "id": 2240
+    },
+    {
+        "product": "Mystical Phoenix Plush",
+        "price": 42.25,
+        "stock": 8,
+        "extra_characteristics": {
+            "material": "Shimmer Fabric",
+            "color": "Red/Gold",
+            "size": "Large",
+            "poseable_tail": true
+        },
+        "id": 2241
+    },
+    {
+        "product": "Sleepy Sloth Buddy",
+        "price": 20.0,
+        "stock": 25,
+        "extra_characteristics": {
+            "material": "Ultra-soft Plush",
+            "color": "Beige",
+            "size": "Medium",
+            "hanging_feature": true
+        },
+        "id": 2242
+    },
+    {
+        "product": "Robotic Companion Plush",
+        "price": 30.0,
+        "stock": 7,
+        "extra_characteristics": {
+            "material": "Synthetic Felt",
+            "color": "Silver",
+            "size": "Small",
+            "light_up_eyes": true
+        },
+        "id": 2243
+    },
+    {
+        "id": 2244,
+        "product": "Candies Pop",
+        "price": 5.75,
+        "stock": 150,
+        "extra_characteristics": {
+            "Taste": "Sweet",
+            "Color": "Red",
+            "Size": "small"
+        }
+    },
+    {
+        "id": 2245,
+        "product": "Spider Stuffed",
+        "price": 24.99,
+        "stock": 200
+    }
+]

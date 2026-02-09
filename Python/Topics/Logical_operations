@@ -1,0 +1,85 @@
+# logical operations = evaluate multiple conditions (or, and, not)
+
+
+
+
+#or = at least one condistion must be true, one of them must be true yes or yes
+temp = 30
+is_raining = False
+
+if temp > 35 or temp < 0 or is_raining:
+    print("the outdoor event is call off")
+else:
+    print("the outdoor event is keep going")
+
+
+# and = both conditions must be true
+#                       not = inverts the condition ( not false, not true)
+tempeture = 40
+is_sunny = False
+
+if tempeture >= 28 and is_sunny:
+    print(f"looks like the tempeture is {tempeture}°C, therefore is so hot to be outside")
+    print("it is sunny")
+elif tempeture <= 0 and is_sunny:
+    print("it is cold outisede")
+    print("it is sunny")
+elif 28 > tempeture > 0 and is_sunny:
+    print("it is warm outside")
+    print("it is sunny")
+elif tempeture >= 28 and not is_sunny:
+    print(f"looks like the tempeture is {tempeture}°C, therefore is so hot to be outside")
+    print("it is cloudy")
+elif tempeture <= 0 and not is_sunny:
+    print("it is cold outisede")
+    print("it is cloudy")
+elif 28 > tempeture > 0 and not is_sunny:
+    print("it is warm outside")
+    print("it is cloudy")
+
+#________________________________________________
+
+age = 20
+has_ticket = False
+if age >= 18 and not has_ticket:               #all variable must be true if one is false all the statement becmoe false
+    print("you are allow to enter sr")         
+else:
+    print("sorry body you can not enter")
+
+has_pass = False
+knows_pass = False
+if has_pass or not knows_pass:
+    print("acess granted")               # at least must be true, if everything is false, the statement become false
+else:
+    print("Access not granted")
+
+is_banned = False
+if not is_banned:                        #change to the opposite
+    print("you are allowed to play")
+elif is_banned:
+    print("you are not allowed to play")
+
+user = 17
+ticket = False
+banned = True
+if (user >= 18 or ticket) or not banned:
+    print("Acces granted")
+else:
+    print("you are not allow to enter")
+
+go = True
+clody = True
+place = 60
+
+if go and clody and place < 60:
+    print("so what are you waiting for, lets go")
+elif go and clody and place > 60:
+    print ("i know you wnna go but it is so far")
+elif go and not clody and place < 60:
+    print("it is not too far but it is not clody, so...")
+elif not go and clody and place < 60:
+    print("why you dont wanna go, it is clody and it is not far")
+elif not go and not clody and place < 60:
+    print("yeah, i know it is not to far but it not cloudy and i dont wanna go either")
+elif go or clody and place < 60:
+    print("lets go, anyways is not too far")
