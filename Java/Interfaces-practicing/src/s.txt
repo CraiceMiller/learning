@@ -1,0 +1,187 @@
+package animals; 
+
+abstract class Animal {
+    protected String name;
+    protected boolean isSleeping = false; 
+    protected  final String SLEEPING_MESSAGE = "This animal is slepping, shh"; 
+
+    public Animal(String name){
+        this.name = name; 
+    }
+
+    /**sleep the animal  */
+    public  void sleep(){
+        if(this.isSleeping){
+            System.out.println(this.SLEEPING_MESSAGE);
+
+        }
+
+        this.isSleeping = true; 
+        System.out.println("This animal start to sleep!!");
+    }
+
+    /**wake up the animal */
+    public void wakeUp(){
+        if(this.isSleeping){
+            System.out.println("This animal is already slepping, shh");
+
+        }
+
+        this.isSleeping = true; 
+        System.out.println("This animal start to sleep!!");
+    }
+
+    abstract void makeSound();
+
+    //Setter
+    public String getName(){
+        return this.name;
+    }
+    //getter
+    public void setName(String newName){
+        String oldName = this.name; 
+        this.name = newName; 
+        System.out.println(oldName+" Change name to " + newName);
+    }
+
+
+}
+
+package animals;
+
+public class Duck extends Animal {
+    public Duck(String name){
+        super(name);
+    }
+
+    @Override
+    void makeSound() {
+        // TODO Auto-generated method stub
+        if(this.isSleeping){
+            System.out.println(this.SLEEPING_MESSAGE);
+            return ;
+        }
+        System.out.println(this.name + " says: Cuack!" ); 
+    }
+
+}
+
+
+package animals; 
+
+public class Rakkun extends Animal {
+
+    public Rakkun(String name) {
+        super(name);
+    }
+
+    @Override
+    void makeSound() {
+        // TODO Auto-generated method stub
+        if(this.isSleeping){
+            System.out.println(this.SLEEPING_MESSAGE);
+            return ;
+        }
+        System.out.println(this.name + " growls");
+    }
+
+}
+
+
+package machine; 
+
+
+public class Bicycle extends Vehicule 
+{
+
+}
+
+package machine;
+
+//TODO how can i extends and implement at the same time ? 
+//is very easyyyyyy, using the combination of "inheretnace" and "compostion" definition 
+
+//firt the inherentance 
+public class Car extends Vehicule
+{
+    //then we use the composition
+    GPS gps = new GPS();
+
+}
+//a car is a vehicule and has a gps
+
+package machine; 
+
+public class CoffeMaker implements ISmartDevice {
+    private boolean isActive = false; 
+    @Override
+    public void turnOff() {
+        // TODO Auto-generated method stub
+        this.isActive = false; 
+    }
+    
+   @Override
+   public void turnOn() {
+    // TODO Auto-generated method stub
+    this.isActive = true;
+   }
+}
+
+package machine;
+
+/**a very simple gps ingine */
+interface IGPS {
+    abstract void getTargetLocation();
+}
+
+class GPS implements IGPS 
+{
+    @Override
+    public void getTargetLocation() {
+        // TODO Auto-generated method stub
+        System.out.println("getting the location");        
+    }
+}
+
+package machine;
+
+
+public interface ISmartDevice {
+    
+    /**This method only turn on the devide */
+    abstract void turnOn(); 
+
+    /**This will turn off the chaine at hand*/
+    abstract void turnOff();
+
+}
+
+
+package machine; 
+
+public abstract class Vehicule {
+    
+
+}
+
+
+import animals.*;
+import machine.*;
+
+/**
+ * @since 08-06-2026, Thursday, 13:00 hrs
+ * My attempt of practcing interfaces and abstraction, along wiht 
+ * encapsulation, inherentence
+ */
+public class App {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Hello, World!");
+        Duck duck = new Duck("Duccky"); 
+        duck.sleep();
+        Bicycle bick = new Bicycle();
+        Car car = new Car();
+
+        
+        
+    }
+}
