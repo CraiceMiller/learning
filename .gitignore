@@ -54,3 +54,4 @@ initgit.bash
 /exclude/
 /excel/
 /.mypy_cache/
+!/.vba/learning.xlsx
