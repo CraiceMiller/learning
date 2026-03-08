@@ -50,3 +50,7 @@ initgit.bash
 */.vscode/
 */dist/
 !react/**/*.png
+/whatever/
+/exclude/
+/excel/
+/.mypy_cache/
