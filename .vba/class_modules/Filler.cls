@@ -49,3 +49,5 @@ End Sub
 Public Property Get length() As Integer
         length = plength
 End Property
+' C:\Users\Usuario Pc\AppData\Roaming\Microsoft\AddIns
+' this is the path of all the plug ins

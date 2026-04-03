@@ -1,68 +1,44 @@
-Attribute VB_Name = "main"
-'this only fill the table with a value
-Public Sub main2()
-    Dim mcl  As CellFormat
-    Dim tst As Testing
-    Set tst = New Testing
-    'tst.name = "Craice"
-    tst.age = 19
-    tst.greet
-    MsgBox tst.version
-End Sub
+Attribute VB_Name = "Main"
+Option Explicit
 
-Private Function verifyer() As VbMsgBoxResult
-    verifyer = MsgBox("Are you sure you want to continue?", 3, "Verify")
+Public Function youcan() As String
+    youcan = "Everything is useful no matter how hard it would be "
+End Function
+Public Function add(a As Integer, b As Integer) As Integer
+    add = a + b
 End Function
 
-Public Sub main()
-    Dim f As Filler
-    Dim f2 As Filler
-    Dim txt As String
-    Dim selector As range
+Public Function findheader(table As Range, data As Variant) As Variant
+    Dim foundCell As Range
+    Dim v As Range
     
-    If verifyer() = vbNo Then Exit Sub
+    Set foundCell = table.Find(what:=data, LookIn:=xlValues, lookat:=xlWhole)
     
-    txt = "learning something new every day"
-    Set selector = Selection
+    
+    If foundCell Is Nothing Then
+        findheader = ""
+        Exit Function
+    End If
+    
+    ' Fix 4: Corrected the typo from "fondcell" to "foundcell"
+    findheader = Cells(1, foundCell.Column).Value
+End Function
 
-    Set f = New Filler
-    Set f2 = New Filler
+Public Function findheaderindata(table1 As Range, table2 As Range) As String
+    Dim v As Range
+    Dim result As New Collection
+    Dim a As Variant
     
-    Set f.table = range("D2:D10")
-    Set f2.table = Cells(1, 4)
 
-    f.fill "Konosuba is the best comedy anime!"
+    For Each v In table2
+         a = findheader(data:=v, table:=table1)
+         If a <> "" Then
+            result.add a
+         End If
+    Next v
     
-  ' If Not f.ok And Not f2.ok Then Exit Sub
-    
-   
-    With f2.table
-        .Interior.Color = vbBlack
-        .ColumnWidth = 120
-        .Font.Color = vbWhite
-        .Font.Bold = True
-        .Font.Size = 45
-        .Font.Italic = True
-        .Font.name = "Elephant"
-        .Font.Underline = True
-        .Select
-    End With
-    
-    range("D1:D11").Select
-    
-    With selector
-        .HorizontalAlignment = xlCenter
-    End With
-    
-    With selector.Borders(xlEdgeBottom)
-        .LineStyle = xlContinuous
-        .Weight = xlThick
-        .Color = RGB(255, 0, 0)
-    End With
-    
-    
-    
-    
-End Sub
+    findheaderindata = result.Item & ""
+End Function
+
 
 

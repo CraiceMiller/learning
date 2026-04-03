@@ -55,3 +55,7 @@ initgit.bash
 /excel/
 /.mypy_cache/
 !/.vba/learning.xlsx
+*.xlsx
+*.xlsb
+*.xlsm
+*.xlam
