@@ -4,15 +4,13 @@ enum Perms {
     ALL
 }
 
-
-
 class Logger {
 
     static [string]$LogFile = ".\activity.log"
 
     static [void] Write([string]$message) {
 
-        $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss" 
+        $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
         "$timestamp - $message" | Out-File `
             -Append `
@@ -82,6 +80,11 @@ class User {
     }
 }
 
+
+
+
+
+# -----------
 class AccessController {
 
     hidden [string[]]$AdminList

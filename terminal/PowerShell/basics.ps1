@@ -16,3 +16,6 @@ if (Test-Admin $craice) {
 #Get-ChildItem
 #Get-verb 
 
+#pipeline
+get-process 
+get-member -InputObject "This is an string" -MemberType 

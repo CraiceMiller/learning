@@ -90,11 +90,25 @@ public class Main{
 |Invoke-Item | |to open an item  |
 | Stop-Process | | to close an app |
 | Start-Process | |to open an app  |
-|  | |  |
-|  | |  |
-|  | |  |
+|Get-Member  | |it show us the methods and properties of an object...  |
+|Get-help  | |  |
+|Start-Sleep  | |it wait untill a certain amount of time...  |
 
 
+
+### Symples Commands
+This will help us to the see the Types of the parameter the function needs and the return type. 
+like i do in python with simple hover it...
+```powershell
+Get-Help <function, object name> -full
+```
+
+```python 
+def fn()-><type>
+```
+
+### Type 
+ 
 
 
 
