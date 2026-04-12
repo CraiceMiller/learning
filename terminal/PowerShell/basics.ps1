@@ -6,7 +6,8 @@ using module ".\tools.psm1"
 $craice = [User]::new("Craice Miller", 19, [Role]::admin)
 $app = "notepad"
 
-Write-Host "Never give in!" -ForegroundColor Cyan
+Write-Host "Never give in!" -ForegroundColor Cyan 
+
 
 if (Test-Admin $craice) {
     Start-Process $app
