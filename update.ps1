@@ -27,7 +27,7 @@ function Close-CommonApps {
 
 $answer = Read-Host -Prompt "Wanna continue"
 
-if ($answer -match "^no$") {
+if ($answer -match "^no") {
 
     Close-CommonApps
 
