@@ -12,4 +12,5 @@ if ($LASTEXITCODE -eq 0) {
 } else {
     Write-Host "Push failed! Did you forget to do something first?" -ForegroundColor Red
 }
+Start-Sleep 7
 Exit

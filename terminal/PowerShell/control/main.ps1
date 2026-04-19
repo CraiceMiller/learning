@@ -20,33 +20,84 @@ class Runner {
 
 
 
+    hidden [hashtable]$profiles
 
-    Runner([string[]]$apps){
-        $this.startApps = $apps
+    Runner() {
+
+        $this.profiles = @{
+
+            Learning = @(
+                "chrome",
+                "code"
+            )
+
+            Work = @(
+                "outlook",
+                "excel"
+            )
+
+            Maintenance = @(
+                "cleanmgr"
+            )
+        }
     }
+
+    [void] StartProfile([string]$profileName) {
+
+        if (-not $this.profiles.ContainsKey($profileName)) {
+
+            Write-Host "Profile not found"
+            return
+        }
+
+        foreach ($app in $this.profiles[$profileName]) {
+
+            Start-Process $app
+        }
+
+        Write-Host "$profileName profile ready $($this.name)"
+    }
+
+
+    [void] CloseProfile([string]$profileName) {
+
+        if (-not $this.profiles.ContainsKey($profileName)) {
+            write-host "That Profile does not exist, sorry my dear $($this.name)"
+            return
+        }
+
+        foreach ($app in $this.profiles[$profileName]) {
+            Write-Host "Closing << $($app) >>"
+
+            Stop-Process -Name $app -Force -ErrorAction SilentlyContinue
+        }
+    }
+
+    [void] ShowProfiles() {
+
+        Write-Host ""
+        Write-Host "Available profiles:"
+
+        foreach ($profile in $this.profiles.Keys) {
+
+            Write-Host "- $profile"
+        }
+    }
+
+
+
+
 
     [void] greet(){
         $pick = $this.greetings | Get-Random
         Write-Host "[$((Get-Date).ToShortTimeString())] $pick" 
     }
 
-    [void] CloseCommonApps() {
-        foreach ($item in $this.startApps) {
-            Stop-Process -Name $item -Force -ErrorAction SilentlyContinue
-        }
-    }
 
     [void] InvalidOption() {
-        Write-Host "Invalid option"
+        Write-Host "My dear $($this.name) you have picked an option I cannot do... please pador me" -ForegroundColor Cyan
     }
 
-    [void] StartLearning() {
-        foreach ($item in $this.startApps) {
-            Start-Process $item
-        }
-
-        Write-Host "Everything is ready $($this.name)"
-    }
 
     [void] Update() {
         $path = Join-Path $PSScriptRoot "update.ps1"
@@ -57,11 +108,14 @@ class Runner {
 
     [void] EndProgram() {
 
-        $this.CloseCommonApps()
+
+        $keys = $this.profiles.Keys
+        foreach ($k in $keys) {
+            $this.CloseProfile($k)
+            
+        }
 
         Write-Host "Have a nice day :) $($this.name)"
-        
-    
         Start-Sleep -Seconds 5
     }
 
@@ -70,23 +124,26 @@ class Runner {
 
         do {
             Clear-Host
-            Write-Host "--- SYSTEM MESSAGE $($this.VERSION) ---" -ForegroundColor Yellow
+            Write-Host "--- SYSTEM PERSONAL INTERFACE  V.$($this.VERSION) ---" -ForegroundColor Yellow
             Write-Host "What are you planning to do, $($this.name)?"
+            write-host ""
+            
+            Write-Host "1. Learning Mode"
+            Write-Host "2. Work Mode"
+            Write-Host "3. Show Profiles"
+            Write-Host "4. Update Git"
+            Write-Host "5. End section for today"
         
-            Write-Host "=== Daily Control Panel ==="
-            Write-Host "1. Start Learning"
-            Write-Host "2. Update Git"
-            Write-Host "4. Exit"
-        
+            write-host ""
             $choice = Read-Host "Select option"
         
             switch ($choice) {
 
-                "1" { $this.StartLearning() }
-
-                "2" { $this.Update() }
-
-                "4" { $this.EndProgram() }
+                "1" { $this.StartProfile("Learning")}
+                "2" { $this.StartProfile("Work")}
+                "3" { $this.ShowProfiles()}
+                "4" { $this.Update() }
+                "5" { $this.EndProgram()}
 
                 default { $this.InvalidOption() }
             }
@@ -95,12 +152,12 @@ class Runner {
 
             Pause
 
-        } until ($choice -eq "4")
+        } until ($choice -eq "5")
     }
 }
 
-$apps = @("chrome", "code")
-$r = [Runner]::new($apps)
+
+$r = [Runner]::new()
 $r.name = "Craice Miller"
 
 $r.greet()
