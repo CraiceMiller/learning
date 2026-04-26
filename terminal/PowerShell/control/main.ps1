@@ -1,165 +1,268 @@
+class Assistant {
 
-class Runner {
-
-    hidden [string]$VERSION="0.0.1"
-    [string[]]$startApps = @()
-    [string]$name = ""
-
-    
-
-    $greetings = @(
-        "Hello there! Ready to get to work?",
-        "Greetings, Earthling. How can I assist today?",
-        "System online. Welcome back, Admin.",
-        "Hey! Hope your coffee is strong and your bugs are few.",
-        "Salutations! Let's automate something awesome.",
-        "Hi! Processing your request with 99.9% enthusiasm.",
-        "Ahoy! Navigation systems are ready for input.",
-        "Top of the morning to you!"
+    [string]$Name
+    [string]$AssistantName = "ORION"
+    hidden [string[]]$Greetings = @(
+        "Systems online.",
+        "Ready when you are.",
+        "Awaiting instructions.",
+        "Navigation console active.",
+        "Environment stable."
     )
 
+    Assistant([string]$userName) {
+        $this.Name = $userName
+    }
+
+    [void] Greet() {
+
+        $hour = (Get-Date).Hour
+
+        if ($hour -lt 12) { $period = "morning" }
+        elseif ($hour -lt 18) { $period = "afternoon" }
+        else { $period = "evening" }
+
+        $randomGreeting = $this.Greetings | Get-Random
+
+        Write-Host ""
+        Write-Host "Assistant: $($this.AssistantName)"
+        Write-Host "Operator: $($this.Name)"
+        Write-Host "Time: $(Get-Date)"
+        Write-Host ""
+        Write-Host "Good $period, $($this.Name)."
+        Write-Host $randomGreeting
+    }
+
+    [void] InvalidOption() {
+
+        Write-Host "$($this.AssistantName): That option is unavailable."
+    }
+
+    [void] ShutdownMessage() {
+
+        Write-Host "$($this.AssistantName): Session closed. Have a productive day, $($this.Name)."
+    }
+}
 
 
-    hidden [hashtable]$profiles
 
-    Runner() {
+class SessionManager {
 
-        $this.profiles = @{
+    hidden [string[]]$ActiveProfiles = @()
 
-            Learning = @(
-                "chrome",
-                "code"
-            )
+    [void] RegisterProfile([string]$profileName) {
 
-            Work = @(
-                "outlook",
-                "excel"
-            )
+        if (-not ($this.ActiveProfiles -contains $profileName)) {
 
-            Maintenance = @(
-                "cleanmgr"
-            )
+            $this.ActiveProfiles += $profileName
+        }
+    }
+
+    [void] ShowStatus() {
+
+        if ($this.ActiveProfiles.Count -eq 0) {
+
+            Write-Host "No active profiles."
+            return
+        }
+
+        Write-Host "Active session profiles:"
+
+        foreach ($profile in $this.ActiveProfiles) {
+
+            Write-Host "• $profile"
+        }
+    }
+}
+
+
+
+class ProfileManager {
+
+    hidden [hashtable]$Profiles
+
+    ProfileManager() {
+
+        $this.Profiles = @{
+
+            Learning = @("chrome","code")
+
+            Work = @("outlook","excel")
+
+            Maintenance = @("cleanmgr")
         }
     }
 
     [void] StartProfile([string]$profileName) {
 
-        if (-not $this.profiles.ContainsKey($profileName)) {
+        if (-not $this.Profiles.ContainsKey($profileName)) {
 
-            Write-Host "Profile not found"
+            Write-Host "Profile not found."
             return
         }
 
-        foreach ($app in $this.profiles[$profileName]) {
+        foreach ($app in $this.Profiles[$profileName]) {
 
+            Write-Host "Launching $app ..."
             Start-Process $app
         }
 
-        Write-Host "$profileName profile ready $($this.name)"
+        Write-Host "$profileName profile ready."
     }
 
 
     [void] CloseProfile([string]$profileName) {
 
-        if (-not $this.profiles.ContainsKey($profileName)) {
-            write-host "That Profile does not exist, sorry my dear $($this.name)"
+        if (-not $this.Profiles.ContainsKey($profileName)) {
+
             return
         }
 
-        foreach ($app in $this.profiles[$profileName]) {
-            Write-Host "Closing << $($app) >>"
+        foreach ($app in $this.Profiles[$profileName]) {
 
             Stop-Process -Name $app -Force -ErrorAction SilentlyContinue
         }
     }
+
+
+    [void] CloseAllProfiles() {
+
+        foreach ($profile in $this.Profiles.Keys) {
+
+            $this.CloseProfile($profile)
+        }
+    }
+
 
     [void] ShowProfiles() {
 
         Write-Host ""
         Write-Host "Available profiles:"
 
-        foreach ($profile in $this.profiles.Keys) {
+        foreach ($profile in $this.Profiles.Keys) {
 
             Write-Host "- $profile"
         }
     }
+}
 
 
 
+class Runner {
 
+    hidden [string]$Version = "1.0.0"
 
-    [void] greet(){
-        $pick = $this.greetings | Get-Random
-        Write-Host "[$((Get-Date).ToShortTimeString())] $pick" 
+    [Assistant]$Assistant
+    [ProfileManager]$ProfileManager
+    [SessionManager]$SessionManager
+
+    Runner([string]$userName) {
+
+        $this.Assistant = [Assistant]::new($userName)
+        $this.ProfileManager = [ProfileManager]::new()
+        $this.SessionManager = [SessionManager]::new()
     }
 
 
-    [void] InvalidOption() {
-        Write-Host "My dear $($this.name) you have picked an option I cannot do... please pador me" -ForegroundColor Cyan
+    [void] UpdateScript() {
+
+        $path = ".\update.ps1"
+
+        Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File $path"
     }
 
+    [void] ShutdownSystem() {
 
-    [void] Update() {
-        $path = Join-Path $PSScriptRoot "update.ps1"
+        $confirm = Read-Host "Confirm shutdown? (y/n)"
     
-        Start-Process powershell `
-            -ArgumentList "-ExecutionPolicy Bypass -File `"$path`""
-    }
-
-    [void] EndProgram() {
-
-
-        $keys = $this.profiles.Keys
-        foreach ($k in $keys) {
-            $this.CloseProfile($k)
-            
+        if ($confirm -match "^yes") {
+            $this.ProfileManager.CloseAllProfiles()
+    
+            Write-Host "Have a lovely rest my dear $($this.name), I am looking foward to be here for you agian :)" -ForegroundColor Cyan
+            start-sleep -seconds 10
+            Stop-Computer -Force
         }
-
-        Write-Host "Have a nice day :) $($this.name)"
-        Start-Sleep -Seconds 5
     }
+
 
     [void] Run() {
+
         $choice = $null
 
         do {
+
             Clear-Host
-            Write-Host "--- SYSTEM PERSONAL INTERFACE  V.$($this.VERSION) ---" -ForegroundColor Yellow
-            Write-Host "What are you planning to do, $($this.name)?"
-            write-host ""
-            
+
+            Write-Host "SYSTEM PERSONAL INTERFACE v$($this.Version)"
+            Write-Host ""
+
+            $this.Assistant.Greet()
+
+            Write-Host ""
             Write-Host "1. Learning Mode"
             Write-Host "2. Work Mode"
             Write-Host "3. Show Profiles"
             Write-Host "4. Update Git"
-            Write-Host "5. End section for today"
-        
-            write-host ""
-            $choice = Read-Host "Select option"
-        
+            Write-Host "5. Session Status"
+            Write-Host "6. Exit"
+            Write-Host "7. Shutdown The computer"
+            Write-Host ""
+
+            $choice = Read-Host "Select option: "
+
             switch ($choice) {
 
-                "1" { $this.StartProfile("Learning")}
-                "2" { $this.StartProfile("Work")}
-                "3" { $this.ShowProfiles()}
-                "4" { $this.Update() }
-                "5" { $this.EndProgram()}
+                "1" {
 
-                default { $this.InvalidOption() }
+                    $this.ProfileManager.StartProfile("Learning")
+                    $this.SessionManager.RegisterProfile("Learning")
+                }
+
+                "2" {
+
+                    $this.ProfileManager.StartProfile("Work")
+                    $this.SessionManager.RegisterProfile("Work")
+                }
+
+                "3" {
+
+                    $this.ProfileManager.ShowProfiles()
+                }
+
+                "4" {
+
+                    $this.UpdateScript()
+                }
+
+                "5" {
+
+                    $this.SessionManager.ShowStatus()
+                }
+
+                "6" {
+
+                    $this.ProfileManager.CloseAllProfiles()
+                    $this.Assistant.ShutdownMessage()
+                }
+                "7"{
+                    $this.ShutdownSystem()
+                }
+
+                default {
+
+                    $this.Assistant.InvalidOption()
+                }
             }
-
-            Start-Sleep -seconds 5
 
             Pause
 
-        } until ($choice -eq "5")
+        }
+
+        until ($choice -eq "6")
     }
 }
 
 
-$r = [Runner]::new()
-$r.name = "Craice Miller"
 
-$r.greet()
-Start-Sleep -seconds 5
-$r.Run()
+$runner = [Runner]::new("Craice Miller")
+$runner.Run()
